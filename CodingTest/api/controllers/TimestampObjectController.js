@@ -39,6 +39,7 @@ module.exports = {
     * server will get value of that key at that time (timestamp) and return { value: "value"}
     */
     timestamp = req.param('timestamp');
+    key = req.param('key');
     sails.log('Get a key', key, timestamp, req.body);
 
     if (!timestamp) timestamp = Number.MAX_SAFE_INTEGER;
@@ -48,7 +49,6 @@ module.exports = {
         timestamp = parseInt(timestamp.replace( /[^\d.]/g, '' ));
       }
 
-    key = req.param('key');
     query = {
       where: {
         key: key,
