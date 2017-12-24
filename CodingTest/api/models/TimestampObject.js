@@ -12,6 +12,7 @@ module.exports = {
   attributes: {
     key : {
       type : 'string',
+      index: true,
       // unique: true
     },
     value : {
