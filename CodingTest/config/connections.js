@@ -89,4 +89,26 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
+   mysql: {
+    module    : 'sails-mysql',
+    adapter   : 'sails-mysql',
+    host      : '103.54.250.167',
+    port      : 3306,
+    user      : 'nguyenmt',
+    password  : 'nguyenmtpassword',
+    // user      : 'root',
+    // password  : 'nguyenmtpassword',
+    database  : 'vault_dragon',
+    // GRANT ALL PRIVILEGES ON *.* TO 'nguyenmt'@'localhost' IDENTIFIED BY 'nguyenmtpassword';
+
+
+    // OR (explicit sets take precedence)
+    // module    : 'sails-mysql',
+    // url       : 'mysql2://USER:PASSWORD@HOST:PORT/DATABASENAME'
+
+    // Optional
+    charset   : 'utf8',
+    collation : 'utf8_swedish_ci'
+  }
+
 };
