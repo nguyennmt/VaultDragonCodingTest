@@ -99,7 +99,7 @@ module.exports.connections = {
     // user      : 'root',
     // password  : 'nguyenmtpassword',
     database  : 'vault_dragon',
-    // GRANT ALL PRIVILEGES ON *.* TO 'nguyenmt'@'localhost' IDENTIFIED BY 'nguyenmtpassword';
+    // GRANT ALL PRIVILEGES ON *.* TO 'nguyenmt'@'host-103-54-250-167' IDENTIFIED BY 'nguyenmtpassword';
 
 
     // OR (explicit sets take precedence)

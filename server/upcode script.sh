@@ -32,8 +32,19 @@ snapshot_source_code() {
 }
 
 upcode() {
-    scp -o StrictHostKeyChecking=no -P $SERVER_PORT -r "$SourceDir" $SERVER_IP:/$SSH_HOME/$SYSTEM/$MAIN_PROJECT
+#    scp -o StrictHostKeyChecking=no -P $SERVER_PORT -r "$SourceDir" $SERVER_IP:/$SSH_HOME/$SYSTEM/$MAIN_PROJECT
+#    ssh -o StrictHostKeyChecking=no "$SERVER_IP" -p "$SERVER_PORT" -tt "
+#        sudo supervisorctl stop js_test_api
+#        sudo supervisorctl start js_test_api
+#    "
+
+    SourceDir=/Users/nguyenmt/PycharmProjects/VaultDragonCodingTest/server/$MAIN_PROJECT.zip;
+    cd /Users/nguyenmt/PycharmProjects/VaultDragonCodingTest/CodingTest;
+    zip -r $SourceDir ./* &>/dev/null;
+
+    scp -o StrictHostKeyChecking=no -P $SERVER_PORT -r "$SourceDir" $SERVER_IP:/$SSH_HOME/$SYSTEM/$MAIN_PROJECT.zip
     ssh -o StrictHostKeyChecking=no "$SERVER_IP" -p "$SERVER_PORT" -tt "
+        unzip -o /$SSH_HOME/$SYSTEM/$MAIN_PROJECT.zip -d /$SSH_HOME/$SYSTEM/$MAIN_PROJECT &> /dev/null;
         sudo supervisorctl stop js_test_api
         sudo supervisorctl start js_test_api
     "
